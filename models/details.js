@@ -26,4 +26,4 @@ const detailsSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('Details', detailsSchema)   
+module.exports = mongoose.model('employeeDetails', detailsSchema)   
