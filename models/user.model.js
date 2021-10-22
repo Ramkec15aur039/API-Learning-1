@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const detailsSchema = new mongoose.Schema({
+const user = new mongoose.Schema({
   id: {
     type: String,
   },
@@ -26,4 +26,4 @@ const detailsSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('employeeDetails', detailsSchema)   
+module.exports = mongoose.model('user', user)   

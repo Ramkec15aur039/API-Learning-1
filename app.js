@@ -1,12 +1,17 @@
-//Libraries
+/*
+   Name : app.js
+*/
+
+/** ***************** Models Import ******************************************************** */
 const express = require("express");
 const mongoose = require("mongoose");
+const routes = require('./routes/v1');
 
 //To start express framework
 const app = express();
 
 //To connect data base
-const url = "mongodb://localhost/details";
+const url = "mongodb://localhost/Node_Express_MongoDB_API_Learning";
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Connection Holder (Handle)
@@ -26,7 +31,6 @@ app.listen(5500, () => {
 app.use(express.json());
 
 //Router
-const detailsRouter = require("./routers/details");
-app.use("/details", detailsRouter);
+app.use("/v1", routes);
 
 
