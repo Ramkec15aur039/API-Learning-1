@@ -30,11 +30,11 @@ function userController - This function is to create the user after the auth and
 
 */
 
-// router
-//   .route('/:userId')
-//   .get(
-//     userController.getUser,
-//   )
+router
+  .route('/:userId')
+  .get(
+    userController.getUser,
+  )
 //   .put(
 //     userController.updateUser,
 //   )
@@ -42,25 +42,6 @@ function userController - This function is to create the user after the auth and
 //     userController.deleteUser,
 //   );
 module.exports = router;
-
-//Get Data by ID
-// router.get("/:id", async (req, res) => {
-//   console.log("Get User by ID");
-//   try {
-//     console.log("Req id ->", req.params.id);
-//     const getDetail = await User.findById(req.params.id);
-//     console.log("Result", getDetail);
-//     if (!getDetail) {
-//       console.log("Not found");
-//       res.sendStatus(404);
-//     } else {
-//       console.log("Found");
-//       res.json(getDetail);
-//     }
-//   } catch (err) {
-//     res.send("Error in fetching data" + err);
-//   }
-// });
 
 //Update Data by ID
 // router.put("/:id", async (req, res) => {

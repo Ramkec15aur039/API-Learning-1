@@ -3,13 +3,14 @@
 */
 
 /** ********************************  Import httpStatus **************************************** */
-const httpStatus = require("http-status");
+const httpStatus = require('http-status');
 
 /** ********************************  Import Services ****************************************** */
-const { userService } = require("../services");
+const { userService } = require('../services');
 
 /** ********************************  Import Utils ******************************************** */
-const catchAsync = require("../utils/catchAsync");
+const catchAsync = require('../utils/catchAsync');
+const ApiError = require('../utils/ApiError');
 
 /*
 function createUser  -  This function is used to create an user
@@ -28,9 +29,21 @@ const getUsers = catchAsync(async (req, res) => {
 });
 
 /*
+function getUser  -  This function is used to get an user  based on id
+*/
+const getUser = catchAsync(async (req, res) => {
+  const user = await userService.getUserById(req.params.userId, req);
+  if(!user){
+    throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
+  }
+  res.send(user);
+});
+
+/*
 exporting all the function using module exports
 */
 module.exports = {
   createUser,
   getUsers,
+  getUser
 };
