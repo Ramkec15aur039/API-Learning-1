@@ -31,48 +31,12 @@ function userController - This function is to create the user after the auth and
 */
 
 router
-  .route('/:userId')
-  .get(
-    userController.getUser,
-  )
-//   .put(
-//     userController.updateUser,
-//   )
-//   .delete(
-//     userController.deleteUser,
-//   );
+  .route("/:userId")
+  .get(userController.getUser)
+  .put(userController.updateUser)
+  .delete(userController.deleteUser);
+  
 module.exports = router;
-
-//Update Data by ID
-// router.put("/:id", async (req, res) => {
-//   console.log(
-//     "Put User by ID",
-//     "Req params ->",
-//     req.params,
-//     "Req body ->",
-//     req.body
-//   );
-//   const employeeId = req.params.id;
-//   const updateData = req.body;
-//   try {
-//     const employeeData = await User.findById(employeeId);
-//     console.log("Requested employee data", employeeData);
-//     if (!employeeData) {
-//       console.log("Not found");
-//       res.sendStatus(404);
-//     }
-//     console.log("Employee data Found");
-//     Object.assign(employeeData, updateData);
-//     console.log("Modified employee data", employeeData);
-//     await employeeData.save().then((data) => {
-//       // console.log("Res check in update ->", res);
-//       res.send(data);
-//     });
-//     // res.send("Update successfully");
-//   } catch (err) {
-//     res.send("Error in fetching data" + err);
-//   }
-// });
 
 // //Delete Data by ID
 // router.delete("/:id", async (req, res) => {
