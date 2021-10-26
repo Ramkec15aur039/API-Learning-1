@@ -4,7 +4,7 @@
   "description": "This API was created using Naveen Reddy's guideline. This API is for learning purpose.",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon src/index.js"
   },
   "author": "Ramakrishna",
   "license": "ISC",
