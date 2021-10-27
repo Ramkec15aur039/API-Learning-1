@@ -6,9 +6,14 @@
 const express = require("express");
 const routes = require("./routes/v1");
 const { errorConverter, errorHandler } = require("./middleware/error");
+const morgan = require('./config/morgan');
 
 //To start express framework
 const app = express();
+
+//Logger Section
+app.use(morgan.successHandler);
+app.use(morgan.errorHandler);
 
 //To make express to accept json object from request body
 app.use(express.json());
